@@ -1,7 +1,7 @@
 import * as components from '../../components';
 
 const Main = () => (
-  <h1>homepage</h1>
+  <components.Navbar />
 
 );
 export default Main;
