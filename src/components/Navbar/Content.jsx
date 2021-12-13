@@ -1,34 +1,28 @@
 import PropTypes from 'prop-types';
 import { CloseOutlined } from '@ant-design/icons';
 
-import {
-  Avatar, Menu, Button,
-} from 'antd';
+import { Avatar, Menu, Button } from 'antd';
+import { ThemeSwitcher } from '../../common';
 import style from './style';
 
 const { Item } = Menu;
 const Content = ({ setVisible, type }) => (
   <>
-    <Avatar
-      size={55}
-      style={style.Avatar}
-    >
-      MK
-    </Avatar>
+    {type === 'vertical'
+      ? null
+      : (
+        <Avatar size={55} style={style.Avatar}>
+          MK
+        </Avatar>
+      ) }
     {type === 'vertical' ? (
       <CloseOutlined
         onClick={() => setVisible((c) => !c)}
         style={style.CloseIcon}
       />
     ) : null}
-    <Menu
-      mode={type}
-      style={{
-        ...style.Menu,
-        background: type === 'horizontal' ? '#0B0C10' : null,
-
-      }}
-    >
+    <br />
+    <Menu mode={type} style={style.Menu}>
       <Item>Home</Item>
       <Item>About</Item>
       <Item>Experience</Item>
@@ -36,9 +30,12 @@ const Content = ({ setVisible, type }) => (
       <Item>Works</Item>
       <Item>Contact</Item>
     </Menu>
-    <Button size="large" type="primary">
-      Hire Me
-    </Button>
+    <div style={style.userToolbar}>
+      <ThemeSwitcher />
+      <Button size="large" type="primary">
+        Hire Me
+      </Button>
+    </div>
   </>
 );
 
