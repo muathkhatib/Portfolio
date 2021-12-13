@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as pages from './pages';
 
 import 'antd/dist/antd.css';
-import './App.less';
+// import './App.less';
 
 const App = () => (
 

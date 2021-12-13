@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { MenuOutlined } from '@ant-design/icons';
 
-import { Drawer } from 'antd';
+import { Drawer, Avatar } from 'antd';
 import Content from './Content';
+
 import style from './style';
 
 const Navbar = () => {
@@ -13,9 +14,9 @@ const Navbar = () => {
 
   return (
     <div
-      style={style.Header}
+      style={{ ...style.Header, padding: width > 768 ? '0 140px' : '0 20px' }}
     >
-      {width > 786 ? (
+      {width > 769 ? (
         <Content visible={visible} setVisible={setVisible} type="horizontal" />
       ) : (
         <>
@@ -40,9 +41,13 @@ const Navbar = () => {
               onClick={() => setVisible((c) => !c)}
               style={style.MenuIcon}
             />
+            <Avatar size={55} style={style.Avatar}>
+              MK
+            </Avatar>
           </div>
         </>
       )}
+
     </div>
   );
 };
