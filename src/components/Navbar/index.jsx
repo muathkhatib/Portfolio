@@ -8,7 +8,7 @@ import style from './style';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const [width, setWidth] = useState(1366);
+  const [width, setWidth] = useState(window.innerWidth);
 
   window.addEventListener('resize', () => setWidth(window.innerWidth));
 
@@ -17,7 +17,7 @@ const Navbar = () => {
       style={{ ...style.Header, padding: width > 768 ? '0 140px' : '0 20px' }}
     >
       {width > 769 ? (
-        <Content visible={visible} setVisible={setVisible} type="horizontal" />
+        <Content setVisible={setVisible} type="horizontal" />
       ) : (
         <>
           <Drawer

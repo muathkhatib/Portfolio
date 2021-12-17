@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { CloseOutlined } from '@ant-design/icons';
 
 import { Avatar, Menu, Button } from 'antd';
@@ -8,13 +9,11 @@ import style from './style';
 const { Item } = Menu;
 const Content = ({ setVisible, type }) => (
   <>
-    {type === 'vertical'
-      ? null
-      : (
-        <Avatar size={55} style={style.Avatar}>
-          MK
-        </Avatar>
-      ) }
+    {type === 'vertical' ? null : (
+      <Avatar size={55} style={style.Avatar}>
+        MK
+      </Avatar>
+    )}
     {type === 'vertical' ? (
       <CloseOutlined
         onClick={() => setVisible((c) => !c)}
