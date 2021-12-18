@@ -21,7 +21,13 @@ const Content = ({ setVisible, type }) => (
       />
     ) : null}
     <br />
-    <Menu mode={type} style={style.Menu}>
+    <Menu
+      mode={type}
+      style={{
+        ...style.Menu,
+        width: type !== 'vertical' ? '40%' : null,
+      }}
+    >
       <Item>Home</Item>
       <Item>About</Item>
       <Item>Experience</Item>
