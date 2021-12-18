@@ -1,16 +1,22 @@
+import { useState, useEffect } from 'react';
 import { Image } from 'antd';
 import { useThemeSwitcher } from 'react-css-theme-switcher';
+
+import { getPersonalImage } from '../../api';
 
 import style from './style';
 
 const HeaderImage = () => {
   const { currentTheme } = useThemeSwitcher();
+  const [imageUrl, setImageUrl] = useState(null);
+
+  useEffect(async () => setImageUrl(await getPersonalImage()), []);
 
   return (
     <div style={style.headerImageContainer}>
       <Image
         preview={false}
-        src="https://media-exp1.licdn.com/dms/image/C4E03AQFqYNjTUttR7A/profile-displayphoto-shrink_800_800/0/1636644923612?e=1645056000&v=beta&t=VRfznZpb4A15e2OdcJdr81k0TYVD0rWb1PWVViaRtvk"
+        src={imageUrl || 'https://cdn.dribbble.com/users/1186261/screenshots/3718681/_______.gif'}
         alt="Personal Image"
         style={{
           ...style.HeaderImage,
