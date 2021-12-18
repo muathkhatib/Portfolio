@@ -28,11 +28,12 @@ const style = {
     width: '65%',
     fontSize: 16,
   },
-  headerImageContainer: {},
+  headerImageContainer: {
+    margin: '20px 0',
+  },
   HeaderImage: {
     borderRadius: 12,
     transform: 'scaleX(-1)',
   },
-
 };
 export default style;
