@@ -1,21 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useContext } from 'react';
 
 import { Button, Typography } from 'antd';
 
-import { getDetails } from '../../api';
-
+import context from '../../context';
 import style from './style';
 
 const { Title, Text, Paragraph } = Typography;
 
 const TextContent = () => {
+  const { first_name: firstName } = useContext(context);
   const [width] = useState(window.innerWidth);
-  const [name, setName] = useState('...');
-
-  useEffect(async () => {
-    const { first_name: firstName } = await getDetails();
-    setName(firstName.stringValue);
-  }, []);
 
   return (
     <div style={style.TextContentContainer}>
@@ -25,7 +19,7 @@ const TextContent = () => {
           This is
           {' '}
           <Text type="secondary" style={style.titleName}>
-            {name}
+            {firstName}
           </Text>
         </div>
         Full Stack Web Developer
@@ -40,7 +34,9 @@ const TextContent = () => {
         deserunt numquam possimus, at eaque blanditiis inventore saepe rerum, in
         explicabo debitis,
       </Paragraph>
-      <Button type="primary" size="large">More about me</Button>
+      <Button type="primary" size="large">
+        More about me
+      </Button>
     </div>
   );
 };

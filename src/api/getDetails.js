@@ -1,13 +1,10 @@
-import { collection, getDocs } from 'firebase/firestore/lite';
+import { collection, getDocs } from 'firebase/firestore';
 import db from '../firebase.config';
 
 const getDetails = async () => {
-  const check = await collection(db, 'details');
-  const { docs } = await getDocs(check);
-  // eslint-disable-next-line no-underscore-dangle
-  const data = docs[0]._document.data.value.mapValue.fields;
-
-  return data;
+  const ref = await collection(db, 'details');
+  const { docs } = await getDocs(ref);
+  return docs[0].data();
 };
 
 export default getDetails;
