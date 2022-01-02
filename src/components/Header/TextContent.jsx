@@ -1,27 +1,26 @@
 import { useState, useContext } from 'react';
 
-import { Button, Typography } from 'antd';
+import { Button, Space, Typography } from 'antd';
 
-import context from '../../context';
+import personalData from '../../context';
 import style from './style';
 
 const { Title, Text, Paragraph } = Typography;
 
 const TextContent = () => {
-  const { first_name: firstName } = useContext(context);
+  const data = useContext(personalData);
   const [width] = useState(window.innerWidth);
-
   return (
-    <div style={style.TextContentContainer}>
+    <Space style={style.TextContentContainer}>
       <Title level={1} style={style.TextContentTitle}>
         <Title level={3}>Hi there,</Title>
-        <div>
+        <Space>
           This is
           {' '}
           <Text type="secondary" style={style.titleName}>
-            {firstName}
+            {data['Full Name'] ? data['Full Name'].split(' ')[0] : null}
           </Text>
-        </div>
+        </Space>
         Full Stack Web Developer
       </Title>
       <Paragraph
@@ -37,7 +36,7 @@ const TextContent = () => {
       <Button type="primary" size="large">
         More about me
       </Button>
-    </div>
+    </Space>
   );
 };
 export default TextContent;

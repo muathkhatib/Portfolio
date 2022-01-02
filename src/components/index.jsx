@@ -1,5 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 import Navbar from './Navbar';
 import Header from './Header';
+import AboutMe from './AboutMe';
 
-export { Navbar, Header };
+export { Navbar, Header, AboutMe };
