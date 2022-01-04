@@ -1,18 +1,19 @@
-import { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Typography, Button, Space } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
 import { useThemeSwitcher } from 'react-css-theme-switcher';
 
+import { useSelector } from 'react-redux';
 import { getResume } from '../../api';
 
 import styles from './styles';
-import personalData from '../../context';
 
 const { Title, Text } = Typography;
 
 const AboutMe = () => {
-  const data = useContext(personalData);
-  const [width] = useState(window.innerWidth);
+  const { detailsReducer: data, screenReducer: screenWidth } = useSelector(
+    (state) => state,
+  );
   const [resumeUrl, setResumeUrl] = useState('');
   const { currentTheme } = useThemeSwitcher();
 
@@ -26,7 +27,12 @@ const AboutMe = () => {
 
   const keys = Object.keys(data);
   return (
-    <div style={styles.container}>
+    <div
+      style={{
+        ...styles.container,
+        padding: screenWidth > 768 ? '0 140px' : '0 20px',
+      }}
+    >
       <div
         style={{
           ...styles.header,
@@ -40,7 +46,13 @@ const AboutMe = () => {
         </Title>
         <Text>Main information about me and what I love to do.</Text>
       </div>
-      <div style={styles.aboutDetails}>
+
+      <div
+        style={{
+          width: screenWidth > 768 ? '50%' : '100%',
+          ...styles.aboutDetails,
+        }}
+      >
         <Title level={5}>
           Hello, I&apos;m
           {' '}
@@ -55,11 +67,11 @@ const AboutMe = () => {
         </Text>
       </div>
       <Space
-        direction={width < 769 ? 'Horizntal' : 'vertical'}
+        direction={screenWidth < 769 ? 'Horizntal' : 'vertical'}
         wrap
         style={{
           ...styles.contentContainer,
-          height: width < 769 ? null : '9rem',
+          height: screenWidth < 769 ? null : '9rem',
         }}
       >
         {keys.length > 0

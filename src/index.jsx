@@ -1,22 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeSwitcherProvider } from 'react-css-theme-switcher';
+
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+import reducers from './sotre';
+
 import App from './App';
 
-const themes = {
-  dark: `${process.env.PUBLIC_URL}/dark-theme.css`,
-  light: `${process.env.PUBLIC_URL}/light-theme.css`,
-};
+const store = createStore(
+  reducers,
+  // eslint-disable-next-line no-underscore-dangle
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeSwitcherProvider
-      themeMap={themes}
-      defaultTheme="light"
-      insertionPoint="styles-insertion-point"
-    >
+    <Provider store={store}>
       <App />
-    </ThemeSwitcherProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
