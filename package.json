@@ -30,8 +30,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npx gulp less && react-scripts start",
+    "build": "npx gulp less && react-scripts build",
     "test": "react-scripts test",
     "gulp-less": "npx gulp less",
     "eject": "react-scripts eject"
