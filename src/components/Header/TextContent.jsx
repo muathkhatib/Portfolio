@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
 
+import { useThemeSwitcher } from 'react-css-theme-switcher';
+
 import { Button, Space, Typography } from 'antd';
 
 import style from './style';
@@ -8,6 +10,7 @@ const { Title, Text, Paragraph } = Typography;
 
 const TextContent = () => {
   const { detailsReducer: data, screenWidth: width } = useSelector((state) => state);
+  const { currentTheme } = useThemeSwitcher();
 
   return (
     <Space style={style.TextContentContainer}>
@@ -16,7 +19,7 @@ const TextContent = () => {
         <Space>
           This is
           {' '}
-          <Text type="secondary" style={style.titleName}>
+          <Text style={{ color: currentTheme !== 'dark' ? '#32638e' : '#CD9C71' }}>
             {data['Full Name'] ? data['Full Name'].split(' ')[0] : null}
           </Text>
         </Space>
