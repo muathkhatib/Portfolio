@@ -1,16 +1,14 @@
 const styles = {
   container: {
-    width: '90%',
-    margin: '1rem auto',
-    padding: '1.5rem 0',
+    width: '100%',
+    margin: '2rem auto',
   },
   aboutDetails: {
-    width: '100%',
-    margin: '2rem 0',
     lineHeight: '1.8',
 
   },
   header: {
+    margin: '2rem 0',
     padding: '0 0.5rem ',
 
   },

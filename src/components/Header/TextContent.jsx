@@ -1,15 +1,14 @@
-import { useState, useContext } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Button, Space, Typography } from 'antd';
 
-import personalData from '../../context';
 import style from './style';
 
 const { Title, Text, Paragraph } = Typography;
 
 const TextContent = () => {
-  const data = useContext(personalData);
-  const [width] = useState(window.innerWidth);
+  const { detailsReducer: data, screenWidth: width } = useSelector((state) => state);
+
   return (
     <Space style={style.TextContentContainer}>
       <Title level={1} style={style.TextContentTitle}>

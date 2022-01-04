@@ -1,4 +1,7 @@
 import { useState } from 'react';
+
+import { useSelector } from 'react-redux';
+
 import { MenuOutlined } from '@ant-design/icons';
 
 import { Drawer, Avatar } from 'antd';
@@ -7,10 +10,9 @@ import Content from './Content';
 import style from './style';
 
 const Navbar = () => {
-  const [visible, setVisible] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
+  const { screenReducer: width } = useSelector((state) => state);
 
-  window.addEventListener('resize', () => setWidth(window.innerWidth));
+  const [visible, setVisible] = useState(false);
 
   return (
     <div

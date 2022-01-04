@@ -1,5 +1,4 @@
-/* eslint-disable no-underscore-dangle */
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import TextContent from './TextContent';
 import HeaderImage from './HeaderImage';
@@ -7,7 +6,7 @@ import HeaderImage from './HeaderImage';
 import style from './style';
 
 const Header = () => {
-  const [width] = useState(window.innerWidth);
+  const { screenReducer: width } = useSelector((state) => state);
 
   return (
     <section style={width > 768 ? style.headerLandscape : style.headerPortrait}>
