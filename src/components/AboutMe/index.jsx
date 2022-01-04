@@ -82,7 +82,7 @@ const AboutMe = () => {
                 :
                 {' '}
               </Text>
-              <Text style={styles.contentData}>{data[type]}</Text>
+              <Text type="secondary" style={styles.contentData}>{data[type]}</Text>
             </li>
           ))
           : null}

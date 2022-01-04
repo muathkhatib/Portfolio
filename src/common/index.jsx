@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
 import ThemeSwitcher from './ThemeSwitcher';
+import Steper from './Steper';
 
-export { ThemeSwitcher };
+export { ThemeSwitcher, Steper };

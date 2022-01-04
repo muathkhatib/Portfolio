@@ -1,7 +1,7 @@
 const styles = {
   container: {
     width: '100%',
-    margin: '2rem auto',
+    marginTop: '80px',
   },
   aboutDetails: {
     lineHeight: '1.8',
@@ -25,10 +25,6 @@ const styles = {
   },
   contentItem: {
     width: '16rem',
-  },
-  contentData: {
-    color: '#787878',
-
   },
 };
 export default styles;
