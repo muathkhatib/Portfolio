@@ -8,28 +8,28 @@ const style = {
     display: 'flex',
     flexDirection: 'row',
     padding: '0 140px',
-    marginTop: 80,
     justifyContent: 'space-between',
+    alignItems: 'center',
+    margin: '5rem 0',
   },
   TextContentContainer: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
     alignItems: 'flex-start',
-    height: '41vh',
   },
   TextContentTitle: {
     height: '20vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    fontWeight: '900',
+    fontSize: '3.25rem',
+    margin: '0 0 4rem 0',
   },
   titleParagraph: {
     width: '65%',
     fontSize: 16,
-  },
-  headerImageContainer: {
-    margin: '20px 0',
   },
   HeaderImage: {
     borderRadius: 12,

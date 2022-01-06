@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import { useSelector } from 'react-redux';
 
+import { useThemeSwitcher } from 'react-css-theme-switcher';
+
 import { MenuOutlined } from '@ant-design/icons';
 
 import { Drawer, Avatar } from 'antd';
@@ -11,6 +13,7 @@ import style from './style';
 
 const Navbar = () => {
   const { screenReducer: width } = useSelector((state) => state);
+  const { currentTheme } = useThemeSwitcher();
 
   const [visible, setVisible] = useState(false);
 
@@ -43,7 +46,7 @@ const Navbar = () => {
               onClick={() => setVisible((c) => !c)}
               style={style.MenuIcon}
             />
-            <Avatar size={55} style={style.Avatar}>
+            <Avatar size={55} style={{ backgroundColor: currentTheme !== 'dark' ? '#32638e' : '#CD9C71', ...style.Avatar }}>
               MK
             </Avatar>
           </div>
