@@ -6,7 +6,7 @@ import { UilMoon, UilSun } from '@iconscout/react-unicons';
 const ThemeSwitcher = () => {
   const [isDarkMode, setIsDarkMode] = useState();
   const {
-    switcher, currentTheme, status, themes,
+    switcher, status, themes,
   } = useThemeSwitcher();
 
   const toggleTheme = (isChecked) => {
@@ -20,17 +20,14 @@ const ThemeSwitcher = () => {
   }
 
   return (
-    <div
-      style={{
-        width: '6rem',
-        display: 'flex',
-        justifyContent: 'space-around',
-      }}
-    >
-      {currentTheme !== 'light' ? <UilMoon /> : <UilSun />}
+    <Switch
+      style={{ marginRight: '1.5rem' }}
+      checkedChildren={<UilMoon />}
+      unCheckedChildren={<UilSun />}
+      checked={isDarkMode}
+      onChange={toggleTheme}
+    />
 
-      <Switch checked={isDarkMode} onChange={toggleTheme} />
-    </div>
   );
 };
 export default ThemeSwitcher;

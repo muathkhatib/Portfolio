@@ -7,6 +7,7 @@ const style = {
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '80px',
+    position: 'sticky',
   },
   MenuBtn: {
     display: 'flex',

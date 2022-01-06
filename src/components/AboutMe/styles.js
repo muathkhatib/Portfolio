@@ -18,13 +18,17 @@ const styles = {
   contentContainer: {
     width: '50%',
     listStyle: 'none',
-    margin: '2rem 0',
   },
   contentTitle: {
-    fontWeight: '600',
+    fontWeight: '700',
+    fontSize: '1.05rem',
   },
   contentItem: {
     width: '16rem',
+    fontSize: '1.05rem',
+  },
+  resumeButton: {
+    marginTop: '2rem',
   },
 };
 export default styles;

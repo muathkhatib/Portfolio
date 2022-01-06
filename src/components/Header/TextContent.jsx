@@ -2,42 +2,33 @@ import { useSelector } from 'react-redux';
 
 import { useThemeSwitcher } from 'react-css-theme-switcher';
 
-import { Button, Space, Typography } from 'antd';
+import { Space, Typography } from 'antd';
 
 import style from './style';
+import AboutMe from '../AboutMe';
 
-const { Title, Text, Paragraph } = Typography;
+const { Text } = Typography;
 
 const TextContent = () => {
-  const { detailsReducer: data, screenWidth: width } = useSelector((state) => state);
+  const { detailsReducer: data, screenReducer: width } = useSelector((state) => state);
   const { currentTheme } = useThemeSwitcher();
-
   return (
-    <Space style={style.TextContentContainer}>
-      <Title level={1} style={style.TextContentTitle}>
-        <Title level={3}>Hi there,</Title>
+    <Space style={{ ...style.TextContentContainer, height: width > 768 ? '41vh' : null }}>
+      <p style={style.TextContentTitle}>
+        <Text style={{ fontSize: '1.5rem', fontWeight: '200' }}>Hi there,</Text>
         <Space>
           This is
           {' '}
           <Text style={{ color: currentTheme !== 'dark' ? '#32638e' : '#CD9C71' }}>
-            {data['Full Name'] ? data['Full Name'].split(' ')[0] : null}
+            {Array.isArray(data) && data[0].data ? data[0].data.split(' ')[0] : null}
+            ,
           </Text>
         </Space>
-        Full Stack Web Developer
-      </Title>
-      <Paragraph
-        style={{
-          ...style.titleParagraph,
-          width: width > 769 ? '65%' : null,
-        }}
-      >
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime
-        deserunt numquam possimus, at eaque blanditiis inventore saepe rerum, in
-        explicabo debitis,
-      </Paragraph>
-      <Button type="primary" size="large">
-        More about me
-      </Button>
+        {Array.isArray(data) && data[3].data ? data[3].data : null}
+      </p>
+
+      <AboutMe />
+
     </Space>
   );
 };
