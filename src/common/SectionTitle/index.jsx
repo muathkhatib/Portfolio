@@ -1,6 +1,7 @@
 import { useThemeSwitcher } from 'react-css-theme-switcher';
 
 import { Typography } from 'antd';
+import PropTypes from 'prop-types';
 
 const { Text, Title } = Typography;
 const styles = {
@@ -36,6 +37,12 @@ const SectionTitle = ({ title, description, id }) => {
       <Text type="secondary" style={styles.description}>{description}</Text>
     </div>
   );
+};
+SectionTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+
 };
 
 export default SectionTitle;
