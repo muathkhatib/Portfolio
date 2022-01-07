@@ -20,7 +20,6 @@ const styles = {
     marginBottom: '3rem',
   },
   skillsWrapContainer: {
-    height: '32vh',
     display: 'flex',
     alignItems: 'center',
     flexWrap: 'wrap',
