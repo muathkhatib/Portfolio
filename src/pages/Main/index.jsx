@@ -10,6 +10,7 @@ const Main = () => {
       <components.Navbar />
       <components.Header />
       <components.History />
+      <components.Skills />
     </>
   ) : <LoadingSpiner />;
 };
