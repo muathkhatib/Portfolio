@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import { Steps, Typography } from 'antd';
 import { useThemeSwitcher } from 'react-css-theme-switcher';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const { Step } = Steps;
 const { Title } = Typography;
@@ -23,20 +23,28 @@ const Steper = ({ data, headerTitle }) => {
         <Steps progressDot current={0} direction="vertical">
           {data && data.length > 0
             ? data.map((elm) => (
-
               <Step
                 title={elm.title}
                 subTitle={elm.subTitle}
                 description={elm.description}
               />
-
             ))
             : null}
         </Steps>
-
       </div>
     </div>
   );
+};
+
+Steper.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      subTitle: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  headerTitle: PropTypes.string.isRequired,
 };
 
 export default Steper;
