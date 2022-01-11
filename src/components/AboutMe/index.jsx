@@ -36,7 +36,7 @@ const AboutMe = () => {
       >
         {data.length > 0
           ? data.map((elm) => (
-            <li style={styles.contentItem}>
+            <li key={Math.random()} style={styles.contentItem}>
               <Text style={styles.contentTitle}>
                 {elm.title}
                 :

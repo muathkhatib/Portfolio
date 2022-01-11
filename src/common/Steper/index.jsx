@@ -27,6 +27,7 @@ const Steper = ({ data, headerTitle }) => {
                 title={elm.title}
                 subTitle={elm.subTitle}
                 description={elm.description}
+                key={Math.random()}
               />
             ))
             : null}

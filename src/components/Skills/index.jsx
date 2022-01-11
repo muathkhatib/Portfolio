@@ -53,7 +53,7 @@ const Skills = () => {
       </div>
       <div style={styles.skillsWrapContainer}>
         {data.length > 0 ? data.map((elm) => (
-          <div style={{ ...styles.skillItem, backgroundColor: currentTheme !== 'dark' ? '#f3f3f3' : '#17181D' }}>
+          <div key={Math.random()} style={{ ...styles.skillItem, backgroundColor: currentTheme !== 'dark' ? '#f3f3f3' : '#17181D' }}>
             <div style={{ width: 32, marginRight: 16 }}>
               <Image src={elm.icon} alt={elm.name} preview={false} />
             </div>
