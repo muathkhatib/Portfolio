@@ -12,6 +12,7 @@ const Main = () => {
       <components.History />
       <components.Skills />
       <components.Works />
+      <components.Footer />
     </>
   ) : <LoadingSpiner />;
 };

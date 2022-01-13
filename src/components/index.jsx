@@ -4,7 +4,8 @@ import AboutMe from './AboutMe';
 import History from './History';
 import Skills from './Skills';
 import Works from './Works';
+import Footer from './Footer';
 
 export {
-  Navbar, Header, AboutMe, History, Skills, Works,
+  Navbar, Header, AboutMe, History, Skills, Works, Footer,
 };
