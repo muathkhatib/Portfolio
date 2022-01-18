@@ -13,9 +13,9 @@ const TextContent = () => {
   const { detailsReducer: data, screenReducer: width } = useSelector((state) => state);
   const { currentTheme } = useThemeSwitcher();
   return (
-    <Space style={{ ...style.TextContentContainer, height: width > 768 ? '41vh' : null }}>
+    <Space style={{ ...style.TextContentContainer, height: width > 768 ? '45vh' : null }}>
       <p style={style.TextContentTitle}>
-        <Text style={{ fontSize: '1.5rem', fontWeight: '200' }}>Hi there,</Text>
+        <Text style={{ fontSize: '1.5rem', fontWeight: '300' }}>Hi there,</Text>
         <Space>
           This is
           {' '}

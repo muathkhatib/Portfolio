@@ -27,11 +27,13 @@ const AboutMe = () => {
     <>
 
       <Space
-        direction={screenWidth < 769 ? 'Horizntal' : 'vertical'}
+        direction={screenWidth < 768 ? 'Horizntal' : 'vertical'}
         wrap
         style={{
           ...styles.contentContainer,
-          height: screenWidth < 769 ? null : '14rem',
+          height: screenWidth < 768 ? null : '14rem',
+          marginTop: screenWidth < 768 ? '5rem' : null,
+          width: screenWidth < 768 ? '100%' : '50%',
         }}
       >
         {data.length > 0
