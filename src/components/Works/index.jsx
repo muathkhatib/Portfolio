@@ -39,7 +39,7 @@ const Works = () => {
             margin: 'auto',
 
           },
-          pageSize: screenReducer > 768 ? 8 : 4,
+          pageSize: screenReducer > 768 ? 6 : 4,
         }}
         grid={{ gutter: 50 }}
         dataSource={data}
