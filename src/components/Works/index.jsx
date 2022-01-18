@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+import { List } from 'antd';
 import { useSelector } from 'react-redux';
 import * as API from '../../api';
 import { SectionTitle } from '../../common';
@@ -13,13 +13,12 @@ const Works = () => {
     const worksReq = await API.getWorks();
     setData(worksReq);
   }, []);
-
   return (
     <section
       style={{
         margin: '5rem 0',
         padding: screenReducer > 768 ? '0 140px' : '0 20px',
-        height: '100vh',
+        minHeight: '100vh',
       }}
     >
       <SectionTitle
@@ -27,27 +26,35 @@ const Works = () => {
         description="Here is some of projects I've been working on"
         id="works"
       />
-      <div
+
+      <List
+        itemLayout="vertical"
         style={{
           margin: '5rem 0',
-          display: 'flex',
-          alignItems: 'flex-start',
-          justifyContent: screenReducer > 768 ? 'space-between' : 'center',
-          flexWrap: 'wrap',
         }}
-      >
-        {data.length > 0
-          ? data.map((elm) => (
+        size="large"
+        pagination={{
+          style: {
+            width: 'fit-content',
+            margin: 'auto',
+
+          },
+          pageSize: screenReducer > 768 ? 8 : 4,
+        }}
+        grid={{ gutter: 50 }}
+        dataSource={data}
+        renderItem={(item) => (
+          <List.Item key={item.name} style={{ margin: '1.5rem 0' }}>
             <WorkCard
-              name={elm.name}
-              deployment={elm.deployment}
-              staticMedia={elm.staticMedia}
-              github={elm.github}
-              technologies={elm.technologies}
+              name={item.name}
+              deployment={item.deployment}
+              staticMedia={item.staticMedia}
+              github={item.github}
+              technologies={item.technologies}
             />
-          ))
-          : null}
-      </div>
+          </List.Item>
+        )}
+      />
     </section>
   );
 };

@@ -16,16 +16,17 @@ const styles = {
     margin: 0,
   },
   contentContainer: {
-    width: '50%',
+
     listStyle: 'none',
   },
   contentTitle: {
-    fontWeight: '700',
-    fontSize: '1.05rem',
+    fontWeight: '600',
+    fontSize: '1.2rem',
   },
   contentItem: {
-    width: '16rem',
+    width: '23npm startrem',
     fontSize: '1.05rem',
+
   },
   resumeButton: {
     marginTop: '2rem',

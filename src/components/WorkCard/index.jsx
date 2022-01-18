@@ -4,6 +4,7 @@ import {
 import { GithubOutlined, LinkOutlined } from '@ant-design/icons';
 import { useThemeSwitcher } from 'react-css-theme-switcher';
 import { PropTypes } from 'prop-types';
+import { useSelector } from 'react-redux';
 
 const { Title } = Typography;
 
@@ -12,14 +13,14 @@ const WorkCard = ({
 }) => {
   const { currentTheme } = useThemeSwitcher();
 
+  const { screenReducer } = useSelector((state) => state);
   const styles = {
     cardContainer: {
-      width: 320,
+      width: screenReducer > 768 ? '28rem' : '20rem',
       borderRadius: '0.25rem',
       cursor: 'pointer',
       boxShadow: '0px 4px 18px #bababa4d',
-      height: '22rem',
-      margin: '1rem',
+      height: screenReducer > 768 ? '26rem' : '22rem',
     },
   };
 
