@@ -26,9 +26,7 @@ const EmailForm = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    console.log(
-      'll',
-    );
+
     const { text } = await emailjs.sendForm(
       process.env.REACT_APP_EmailJs_Service,
       process.env.REACT_APP_EmailJs_Template,
