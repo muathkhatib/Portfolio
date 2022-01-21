@@ -26,7 +26,12 @@ const EmailForm = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-
+    setEmailForm({
+      name: '',
+      subject: '',
+      email: '',
+      message: '',
+    });
     const { text } = await emailjs.sendForm(
       process.env.REACT_APP_EmailJs_Service,
       process.env.REACT_APP_EmailJs_Template,
