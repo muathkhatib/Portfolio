@@ -8,6 +8,10 @@ const style = {
     alignItems: 'center',
     height: '80px',
     position: 'sticky',
+    top: 0,
+    zIndex: 100,
+    left: 0,
+    backgroundColor: '#fff',
   },
   MenuBtn: {
     display: 'flex',

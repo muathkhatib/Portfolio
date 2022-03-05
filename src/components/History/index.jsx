@@ -31,12 +31,14 @@ const History = () => {
     setEducation(getEdu);
   }, []);
   return (
-    <section style={{
-      ...styles.container,
-      padding: screenReducer > 768 ? '0 140px' : '0 20px',
-    }}
+    <section
+      style={{
+        ...styles.container,
+        padding: screenReducer > 768 ? '0 140px' : '0 20px',
+      }}
+      id="history"
     >
-      <SectionTitle id="history" title="History" description="Work experience and education history" />
+      <SectionTitle title="history" description="Work experience and education history" />
       <section
         style={{
           ...styles.content,

@@ -15,16 +15,18 @@ const Works = () => {
   }, []);
   return (
     <section
+      id="works"
       style={{
         margin: '5rem 0',
         padding: screenReducer > 768 ? '0 140px' : '0 20px',
         minHeight: '100vh',
+
       }}
     >
       <SectionTitle
         title="My Works"
         description="Here is some of projects I've been working on"
-        id="works"
+
       />
 
       <List

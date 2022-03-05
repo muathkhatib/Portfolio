@@ -5,6 +5,7 @@ import { useThemeSwitcher } from 'react-css-theme-switcher';
 import { CloseOutlined } from '@ant-design/icons';
 
 import { Avatar, Menu, Button } from 'antd';
+import { Link } from 'react-scroll';
 import { ThemeSwitcher } from '../../common';
 import style from './style';
 
@@ -33,11 +34,34 @@ const Content = ({ setVisible, type }) => {
           width: type !== 'vertical' ? '40%' : null,
         }}
       >
-        <Item>Home</Item>
-        <Item>History</Item>
-        <Item>Skills</Item>
-        <Item>Works</Item>
-        <Item>Contact</Item>
+        <Item>
+          <Link activeClass="active-link" to="home" smooth="true">
+            Home
+          </Link>
+        </Item>
+        <Item>
+          <Link activeClass="active-link" to="history" smooth="true">
+            History
+          </Link>
+        </Item>
+        <Item>
+          <Link activeClass="active-link" to="skills" smooth="true">
+            Skills
+          </Link>
+        </Item>
+
+        <Item>
+          <Link activeClass="active-link" to="works" smooth="true">
+            Works
+          </Link>
+        </Item>
+
+        <Item>
+          <Link activeClass="active-link" to="contact" smooth="true">
+            Contact Me
+          </Link>
+        </Item>
+
       </Menu>
       <div style={style.userToolbar}>
         <ThemeSwitcher />

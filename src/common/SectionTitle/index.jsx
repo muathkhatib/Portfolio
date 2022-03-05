@@ -28,8 +28,8 @@ const SectionTitle = ({ title, description, id }) => {
         borderLeft: `0.25rem solid ${
           currentTheme !== 'dark' ? '#32638e' : '#cd9c71'
         }`,
-        id,
       }}
+      id={id}
     >
       <Title level={3} style={styles.headerTitle}>
         {title}
