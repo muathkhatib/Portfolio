@@ -4,7 +4,7 @@ import * as components from '../../components';
 
 const Main = () => {
   const data = useSelector((state) => state.detailsReducer);
-  return data.length > 0 ? (
+  return data.fullName ? (
     <>
       <components.Navbar />
       <components.Header />

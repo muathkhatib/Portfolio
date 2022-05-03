@@ -20,11 +20,11 @@ const TextContent = () => {
           This is
           {' '}
           <Text style={{ color: currentTheme !== 'dark' ? '#32638e' : '#CD9C71' }}>
-            {Array.isArray(data) && data[0].data ? data[0].data.split(' ')[0] : null}
+            {data.fullName ? data.fullName.split(' ')[0] : 'name'}
             ,
           </Text>
         </Space>
-        {Array.isArray(data) && data[3].data ? data[3].data : null}
+        {data.jobTitle}
       </p>
 
       <AboutMe />

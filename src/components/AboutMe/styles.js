@@ -24,12 +24,13 @@ const styles = {
     fontSize: '1.2rem',
   },
   contentItem: {
-    width: '23npm startrem',
+    width: '23rem',
     fontSize: '1.05rem',
 
   },
   resumeButton: {
     marginTop: '2rem',
   },
+
 };
 export default styles;

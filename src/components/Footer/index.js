@@ -19,7 +19,7 @@ const Footer = () => {
       <Text type="secondary">
         2022&copy;
         {' '}
-        {detailsReducer[0].data}
+        {detailsReducer.fullName}
         , Are Rights Reserved.
       </Text>
     </footer>

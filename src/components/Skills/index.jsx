@@ -8,7 +8,7 @@ import { useThemeSwitcher } from 'react-css-theme-switcher';
 
 import * as common from '../../common';
 
-import * as Api from '../../api';
+import * as api from '../../api';
 
 const { Text } = Typography;
 
@@ -42,7 +42,7 @@ const Skills = () => {
   const { screenReducer } = useSelector((state) => state);
   const { currentTheme } = useThemeSwitcher();
   useEffect(async () => {
-    const skillsRequest = await Api.getSkills();
+    const skillsRequest = await api.getSkills();
     setData(skillsRequest);
   }, []);
 
