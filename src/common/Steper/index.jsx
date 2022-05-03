@@ -2,6 +2,7 @@ import { Steps, Typography } from 'antd';
 import { useThemeSwitcher } from 'react-css-theme-switcher';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import './style.css';
 
 const { Step } = Steps;
 const { Title } = Typography;

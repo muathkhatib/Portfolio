@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <div
-      style={{ ...style.Header, padding: width > 768 ? '0 140px' : '0 20px' }}
+      style={{ ...style.Header, padding: width > 768 ? '0 140px' : '0 20px', background: currentTheme !== 'dark' ? '#FFF' : '#17181D' }}
     >
       {width > 769 ? (
         <Content setVisible={setVisible} type="horizontal" />

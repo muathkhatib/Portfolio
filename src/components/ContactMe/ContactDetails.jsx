@@ -13,9 +13,8 @@ const { Title, Text } = Typography;
 const ContactDetails = () => {
   const { detailsReducer } = useSelector((state) => state);
 
-  const data = detailsReducer.filter((element) => element.title === 'Phone' || element.title === 'Email' || element.title === 'Address');
+  const data = detailsReducer.specifications.filter((element) => element.title === 'Phone' || element.title === 'Email' || element.title === 'Address');
   const { currentTheme } = useThemeSwitcher();
-
   const iconGenration = (name) => {
     switch (name) {
       case 'Phone':

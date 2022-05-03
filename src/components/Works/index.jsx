@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { List } from 'antd';
 import { useSelector } from 'react-redux';
-import * as API from '../../api';
+import * as api from '../../api';
 import { SectionTitle } from '../../common';
 import WorkCard from '../WorkCard';
 
@@ -10,7 +10,7 @@ const Works = () => {
   const { screenReducer } = useSelector((state) => state);
 
   useEffect(async () => {
-    const worksReq = await API.getWorks();
+    const worksReq = await api.getWorks();
     setData(worksReq);
   }, []);
   return (

@@ -24,8 +24,7 @@ const style = {
     flexDirection: 'column',
     justifyContent: 'space-between',
     fontWeight: '900',
-    fontSize: '3.25rem',
-    margin: '0 0 4rem 0',
+    fontSize: '2.8rem',
   },
   titleParagraph: {
     width: '65%',
@@ -33,7 +32,7 @@ const style = {
   },
   HeaderImage: {
     borderRadius: 12,
-    transform: 'scaleX(-1)',
+    // transform: 'scaleX(-1)',
   },
 };
 export default style;

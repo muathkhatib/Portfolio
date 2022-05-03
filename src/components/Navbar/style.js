@@ -11,7 +11,6 @@ const style = {
     top: 0,
     zIndex: 100,
     left: 0,
-    backgroundColor: '#fff',
   },
   MenuBtn: {
     display: 'flex',

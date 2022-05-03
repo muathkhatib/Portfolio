@@ -32,12 +32,12 @@ const AboutMe = () => {
         style={{
           ...styles.contentContainer,
           height: screenWidth < 768 ? null : '14rem',
-          marginTop: screenWidth < 768 ? '5rem' : null,
+          marginTop: screenWidth < 768 ? '2rem' : null,
           width: screenWidth < 768 ? '100%' : '50%',
         }}
       >
-        {data.length > 0
-          ? data.map((elm) => (
+        {data?.specifications.length > 0
+          ? data?.specifications.map((elm) => (
             <li key={Math.random()} style={styles.contentItem}>
               <Text style={styles.contentTitle}>
                 {elm.title}
