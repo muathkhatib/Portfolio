@@ -3,6 +3,7 @@ const style = {
     display: 'flex',
     flexDirection: 'column',
     padding: '0 20px',
+    marginTop: '80px',
   },
   headerLandscape: {
     display: 'flex',
