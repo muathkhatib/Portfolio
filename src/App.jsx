@@ -29,7 +29,7 @@ const App = () => {
   return (
     <ThemeSwitcherProvider
       themeMap={themes}
-      defaultTheme={localStorage.getItem('theme') || 'dark'}
+      defaultTheme={localStorage.getItem('theme') || 'light'}
       insertionPoint="styles-insertion-point"
     >
       <Router>
