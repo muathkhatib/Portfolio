@@ -12,7 +12,7 @@ const Steper = ({ data, headerTitle }) => {
   const { screenReducer } = useSelector((state) => state);
 
   return (
-    <div style={{ width: screenReducer > 768 ? 530 : '100%' }}>
+    <div style={{ width: screenReducer >= 768 ? '100%' : '100%', margin: '1rem' }}>
       <Title level={3}>{headerTitle}</Title>
       <div
         style={{
