@@ -4,7 +4,7 @@ import { Switch } from 'antd';
 import { UilMoon, UilSun } from '@iconscout/react-unicons';
 
 const ThemeSwitcher = () => {
-  const [isDarkMode, setIsDarkMode] = useState();
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const {
     switcher, status, themes,
   } = useThemeSwitcher();
@@ -12,6 +12,7 @@ const ThemeSwitcher = () => {
   const toggleTheme = (isChecked) => {
     setIsDarkMode(isChecked);
     switcher({ theme: isChecked ? themes.dark : themes.light });
+    localStorage.setItem('theme', isChecked ? 'dark' : 'light');
   };
 
   // Avoid theme change flicker
@@ -24,7 +25,7 @@ const ThemeSwitcher = () => {
       style={{ marginRight: '1.5rem' }}
       checkedChildren={<UilMoon />}
       unCheckedChildren={<UilSun />}
-      checked={isDarkMode}
+      checked={localStorage.getItem('theme') === 'dark' || isDarkMode}
       onChange={toggleTheme}
     />
 
