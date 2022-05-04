@@ -56,6 +56,7 @@ const WorkCard = ({
           {name}
         </Title>
         <div>
+          {deployment && (
           <Button
             type="link"
             href={deployment}
@@ -64,6 +65,8 @@ const WorkCard = ({
           >
             <LinkOutlined />
           </Button>
+          )}
+          {github && (
           <Button
             type="link"
             href={github}
@@ -72,6 +75,7 @@ const WorkCard = ({
           >
             <GithubOutlined />
           </Button>
+          )}
         </div>
       </div>
       <div
