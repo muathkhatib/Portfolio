@@ -33,7 +33,7 @@ const style = {
   },
   HeaderImage: {
     borderRadius: 12,
-    // transform: 'scaleX(-1)',
+    transform: 'scaleX(-1)',
   },
 };
 export default style;
