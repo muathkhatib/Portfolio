@@ -6,12 +6,43 @@ import { CloseOutlined } from '@ant-design/icons';
 
 import { Avatar, Menu, Button } from 'antd';
 import { Link } from 'react-scroll';
+import { useCallback, useMemo } from 'react';
 import { ThemeSwitcher } from '../../common';
 import style from './style';
 
 const { Item } = Menu;
-const Content = ({ setVisible, type }) => {
+const Content = ({ setVisible, type, visible }) => {
   const { currentTheme } = useThemeSwitcher();
+
+  const closeDrawer = useCallback(() => {
+    if (visible) {
+      setVisible(false);
+    }
+  });
+
+  const menuItems = useMemo(() => [
+    {
+      key: 'home',
+      content: 'Home',
+    },
+    {
+      key: 'history',
+      content: 'History',
+    },
+    {
+      key: 'skills',
+      content: 'Skills',
+    },
+    {
+      key: 'works',
+      content: 'Works',
+    },
+    {
+      key: 'contact',
+      content: 'Contact',
+    },
+
+  ], []);
 
   return (
     <>
@@ -34,33 +65,20 @@ const Content = ({ setVisible, type }) => {
           width: type !== 'vertical' ? '40%' : null,
         }}
       >
-        <Item>
-          <Link activeClass="active-link" to="home" smooth="true">
-            Home
-          </Link>
-        </Item>
-        <Item>
-          <Link activeClass="active-link" to="history" smooth="true">
-            History
-          </Link>
-        </Item>
-        <Item>
-          <Link activeClass="active-link" to="skills" smooth="true">
-            Skills
-          </Link>
-        </Item>
-
-        <Item>
-          <Link activeClass="active-link" to="works" smooth="true">
-            Works
-          </Link>
-        </Item>
-
-        <Item>
-          <Link activeClass="active-link" to="contact" smooth="true">
-            Contact Me
-          </Link>
-        </Item>
+        {menuItems.map((item) => (
+          <Item key={item.key}>
+            <Link
+              to={item.key}
+              spy
+              smooth
+              offset={-70}
+              duration={550}
+              onClick={closeDrawer}
+            >
+              {item.content}
+            </Link>
+          </Item>
+        ))}
 
       </Menu>
       <div style={style.userToolbar}>
@@ -76,6 +94,7 @@ const Content = ({ setVisible, type }) => {
 Content.propTypes = {
   setVisible: PropTypes.objectOf.isRequired,
   type: PropTypes.string.isRequired,
+  visible: PropTypes.bool.isRequired,
 };
 
 export default Content;

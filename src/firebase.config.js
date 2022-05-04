@@ -8,7 +8,6 @@ const {
   REACT_APP_STORAGE_BOCKET,
   REACT_APP_MESSAGING_SENDER_ID,
   REACT_APP_APP_ID,
-  // REACT_APP_MEASUREMENT_ID,
 } = process.env;
 
 const firebaseConfig = {
@@ -19,7 +18,6 @@ const firebaseConfig = {
   storageBucket: REACT_APP_STORAGE_BOCKET,
   messagingSenderId: REACT_APP_MESSAGING_SENDER_ID,
   appId: REACT_APP_APP_ID,
-  // measurementId: REACT_APP_MEASUREMENT_ID,
 
 };
 

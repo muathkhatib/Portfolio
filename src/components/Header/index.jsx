@@ -9,7 +9,7 @@ const Header = () => {
   const { screenReducer: width } = useSelector((state) => state);
 
   return (
-    <section id="body" style={width > 768 ? style.headerLandscape : style.headerPortrait}>
+    <section id="home" style={width > 768 ? style.headerLandscape : style.headerPortrait}>
       <TextContent />
       <HeaderImage />
     </section>

@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import {
+  useRef, useState, useEffect,
+} from 'react';
 
 import { useSelector } from 'react-redux';
 
@@ -17,11 +19,28 @@ const Navbar = () => {
 
   const [visible, setVisible] = useState(false);
 
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    let prevScrollpos = window.pageYOffset;
+    window.addEventListener('scroll', () => {
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        navbarRef.current.style.top = '0';
+      } else {
+        navbarRef.current.style.top = '-80px';
+      }
+      prevScrollpos = currentScrollPos;
+    });
+    return () => window.removeEventListener('scroll');
+  }, []);
+
   return (
     <div
+      ref={navbarRef}
       style={{ ...style.Header, padding: width > 768 ? '0 140px' : '0 20px', background: currentTheme !== 'dark' ? '#FFF' : '#17181D' }}
     >
-      {width > 769 ? (
+      {width >= 1200 ? (
         <Content setVisible={setVisible} type="horizontal" />
       ) : (
         <>

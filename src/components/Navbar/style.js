@@ -7,10 +7,12 @@ const style = {
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '80px',
-    position: 'sticky',
+    position: 'fixed',
+    width: '100%',
     top: 0,
     zIndex: 100,
     left: 0,
+    transition: 'top 0.5s ease-in-out',
   },
   MenuBtn: {
     display: 'flex',

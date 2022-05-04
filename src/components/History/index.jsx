@@ -42,7 +42,7 @@ const History = () => {
       <section
         style={{
           ...styles.content,
-          flexDirection: screenReducer > 768 ? 'row' : 'column',
+          flexDirection: screenReducer >= 960 ? 'row' : 'column',
           margin: '80px 0',
         }}
       >

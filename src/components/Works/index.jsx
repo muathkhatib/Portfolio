@@ -33,6 +33,7 @@ const Works = () => {
         itemLayout="vertical"
         style={{
           margin: '5rem 0',
+
         }}
         size="large"
         pagination={{
@@ -43,7 +44,15 @@ const Works = () => {
           },
           pageSize: screenReducer > 768 ? 6 : 4,
         }}
-        grid={{ gutter: 50 }}
+        grid={{
+          gutter: 16,
+          xs: 1,
+          sm: 1,
+          md: 1,
+          lg: 3,
+          xl: 3,
+          xxl: 3,
+        }}
         dataSource={data}
         renderItem={(item) => (
           <List.Item key={item.name} style={{ margin: '1.5rem 0' }}>

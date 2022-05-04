@@ -16,11 +16,12 @@ const WorkCard = ({
   const { screenReducer } = useSelector((state) => state);
   const styles = {
     cardContainer: {
-      width: screenReducer > 768 ? '28rem' : '20rem',
+      // width: screenReducer > 768 ? '33%' : '20rem',
       borderRadius: '0.25rem',
       cursor: 'pointer',
       boxShadow: '0px 4px 18px #bababa4d',
-      height: screenReducer > 768 ? '26rem' : '22rem',
+      height: screenReducer >= 768 ? '26rem' : '22rem',
+      // border: '1px solid red',
     },
   };
 
