@@ -4,13 +4,13 @@ import { Switch } from 'antd';
 import { UilMoon, UilSun } from '@iconscout/react-unicons';
 
 const ThemeSwitcher = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const {
     switcher, status, themes,
   } = useThemeSwitcher();
 
   const toggleTheme = (isChecked) => {
-    setIsDarkMode(isChecked);
+    setIsDarkMode((prevState) => !prevState);
     switcher({ theme: isChecked ? themes.dark : themes.light });
     localStorage.setItem('theme', isChecked ? 'dark' : 'light');
   };
