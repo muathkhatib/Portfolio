@@ -18,7 +18,7 @@ const Steper = ({ data, headerTitle }) => {
         style={{
           background: currentTheme !== 'dark' ? '#F3F3F3' : '#17181D',
           padding: screenReducer > 768 ? '60px 70px' : '10px 20px',
-          minHeight: 300,
+          minHeight: 500,
         }}
       >
         <Steps progressDot current={0} direction="vertical">

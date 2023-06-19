@@ -15,7 +15,6 @@ const TextContent = () => {
   return (
     <Space style={{ ...style.TextContentContainer, height: width > 768 ? '45vh' : null }}>
       <p style={style.TextContentTitle}>
-        <Text style={{ fontSize: '1.5rem', fontWeight: '300' }}>Hi there,</Text>
         <Space>
           This is
           {' '}

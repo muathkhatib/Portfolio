@@ -36,7 +36,7 @@ const EmailForm = () => {
       process.env.REACT_APP_EmailJs_Service,
       process.env.REACT_APP_EmailJs_Template,
       e.target,
-      process.env.REACT_APP_EmailJs_UserId,
+      process.env.REACT_APP_EmailJs_Public_KEY,
     );
 
     if (text === 'OK') {
@@ -56,21 +56,26 @@ const EmailForm = () => {
     <div
       style={{
         ...styles.formContainer,
-        width: screenReducer > 768 ? '45%' : '100%',
+        width: screenReducer > 768 ? '50%' : '100%',
       }}
     >
       <form onSubmit={sendEmail} style={styles.form}>
-        <div style={{
-          ...styles.formHeadContainer, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        }}
+        <div
+          style={{
+            ...styles.formHeadContainer,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
         >
           <Input
             style={styles.formHeadInputs}
             size="large"
             type="text"
-            name="name"
+            name="sender_name"
             value={emailForm.name}
             placeholder="Name"
+            required
             onChange={(e) => setEmailForm((c) => ({ ...c, name: e.target.value }))}
           />
 
@@ -78,9 +83,10 @@ const EmailForm = () => {
             style={styles.formHeadInputs}
             size="large"
             type="email"
-            name="email"
+            name="sender_email"
             value={emailForm.email}
             placeholder="Email"
+            required
             onChange={(e) => setEmailForm((c) => ({ ...c, email: e.target.value }))}
           />
         </div>
@@ -88,20 +94,24 @@ const EmailForm = () => {
           style={styles.formInput}
           size="large"
           type="text"
-          name="subject"
+          name="subject_title"
           value={emailForm.subject}
           placeholder="Subject"
+          required
           onChange={(e) => setEmailForm((c) => ({ ...c, subject: e.target.value }))}
         />
         <TextArea
           style={styles.formInput}
-          name="message"
+          name="message_body"
           value={emailForm.message}
           placeholder="Message"
           onChange={(e) => setEmailForm((c) => ({ ...c, message: e.target.value }))}
           autoSize={{ minRows: 5 }}
+          required
         />
-        <Button style={styles.formBtn} type="primary" htmlType="submit">Send Message</Button>
+        <Button style={styles.formBtn} type="primary" htmlType="submit">
+          Send Message
+        </Button>
       </form>
     </div>
   );

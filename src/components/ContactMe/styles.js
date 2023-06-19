@@ -6,7 +6,7 @@ const styles = {
   contactContainer: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
   },
   formContainer: {
     margin: '5rem 0',

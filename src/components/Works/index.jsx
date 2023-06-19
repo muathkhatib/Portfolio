@@ -13,6 +13,7 @@ const Works = () => {
     const worksReq = await api.getWorks();
     setData(worksReq);
   }, []);
+
   return (
     <section
       id="works"
