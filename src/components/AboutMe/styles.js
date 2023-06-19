@@ -22,6 +22,7 @@ const styles = {
   contentTitle: {
     fontWeight: '600',
     fontSize: '1.2rem',
+    marginBottom: '1rem',
   },
   contentItem: {
     width: '23rem',

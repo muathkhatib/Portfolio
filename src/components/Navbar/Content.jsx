@@ -4,7 +4,7 @@ import { useThemeSwitcher } from 'react-css-theme-switcher';
 
 import { CloseOutlined } from '@ant-design/icons';
 
-import { Avatar, Menu, Button } from 'antd';
+import { Avatar, Menu } from 'antd';
 import { Link } from 'react-scroll';
 import { useCallback, useMemo } from 'react';
 import { ThemeSwitcher } from '../../common';
@@ -47,7 +47,13 @@ const Content = ({ setVisible, type, visible }) => {
   return (
     <>
       {type === 'vertical' ? null : (
-        <Avatar size={55} style={{ backgroundColor: currentTheme !== 'dark' ? '#32638e' : '#CD9C71', ...style.Avatar }}>
+        <Avatar
+          size={55}
+          style={{
+            backgroundColor: currentTheme !== 'dark' ? '#32638e' : '#CD9C71',
+            ...style.Avatar,
+          }}
+        >
           MK
         </Avatar>
       )}
@@ -79,14 +85,8 @@ const Content = ({ setVisible, type, visible }) => {
             </Link>
           </Item>
         ))}
-
       </Menu>
-      <div style={style.userToolbar}>
-        <ThemeSwitcher />
-        <Button size="large" type="primary">
-          Hire Me
-        </Button>
-      </div>
+      <ThemeSwitcher />
     </>
   );
 };

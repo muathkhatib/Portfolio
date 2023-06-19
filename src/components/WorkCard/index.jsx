@@ -14,23 +14,23 @@ const WorkCard = ({
   const { currentTheme } = useThemeSwitcher();
 
   const { screenReducer } = useSelector((state) => state);
+
   const styles = {
     cardContainer: {
-      // width: screenReducer > 768 ? '33%' : '20rem',
       borderRadius: '0.25rem',
       cursor: 'pointer',
       boxShadow: '0px 4px 18px #bababa4d',
-      height: screenReducer >= 768 ? '26rem' : '22rem',
-      // border: '1px solid red',
+      height: screenReducer >= 768 ? '26rem' : 'fill-content',
+      paddingBottom: '1rem',
     },
   };
 
   return (
     <div key={Math.random()} style={styles.cardContainer}>
-      <div style={{ height: '60%' }}>
+      <div style={{ height: '251px' }}>
         <Image
           style={{
-            height: '100%',
+            height: '251px',
             width: '100%',
             objectFit: 'cover',
           }}
@@ -57,24 +57,14 @@ const WorkCard = ({
         </Title>
         <div>
           {deployment && (
-          <Button
-            type="link"
-            href={deployment}
-            target="blank"
-            size="large"
-          >
-            <LinkOutlined />
-          </Button>
+            <Button type="link" href={deployment} target="blank" size="large">
+              <LinkOutlined />
+            </Button>
           )}
           {github && (
-          <Button
-            type="link"
-            href={github}
-            target="blank"
-            size="large"
-          >
-            <GithubOutlined />
-          </Button>
+            <Button type="link" href={github} target="blank" size="large">
+              <GithubOutlined />
+            </Button>
           )}
         </div>
       </div>

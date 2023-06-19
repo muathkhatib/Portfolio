@@ -13,7 +13,11 @@ const { Title, Text } = Typography;
 const ContactDetails = () => {
   const { detailsReducer } = useSelector((state) => state);
 
-  const data = detailsReducer.specifications.filter((element) => element.title === 'Phone' || element.title === 'Email' || element.title === 'Address');
+  const data = detailsReducer.specifications.filter(
+    (element) => element.title === 'Phone'
+    || element.title === 'Email',
+    // || element.title === 'Address',
+  );
   const { currentTheme } = useThemeSwitcher();
   const iconGenration = (name) => {
     switch (name) {
@@ -31,22 +35,64 @@ const ContactDetails = () => {
       <Text type="secondary" style={{ fontSize: '1.1rem' }}>
         Here is my main information to have contact with me,
       </Text>
-      {Array.isArray(data) && data.length > 0 ? data.map((e) => (
-        <div style={{ margin: '1rem 0' }}>
-          <Text style={{ fontSize: '1.05rem', display: 'flex', alignItems: 'center' }}>
-            <Text style={{ marginRight: '0.5rem', fontSize: '1.5rem', color: currentTheme !== 'dark' ? '#32638e' : '#CD9C71' }}>
-              {iconGenration(e.title)}
+      {Array.isArray(data) && data.length > 0
+        ? data.map((e) => (
+          <div style={{ margin: '1rem 0' }}>
+            <Text
+              style={{
+                fontSize: '1.05rem',
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <Text
+                style={{
+                  marginRight: '0.5rem',
+                  fontSize: '1.5rem',
+                  color: currentTheme !== 'dark' ? '#32638e' : '#CD9C71',
+                }}
+              >
+                {iconGenration(e.title)}
+              </Text>
+              {e.data}
             </Text>
-            {e.data}
-          </Text>
-        </div>
-      )) : null }
+          </div>
+        ))
+        : null}
       <div style={{ margin: '1rem 0' }}>
-        <Text style={{ fontSize: '1.05rem', display: 'flex', alignItems: 'center' }}>
-          <Text style={{ marginRight: '0.5rem', fontSize: '1.5rem', color: currentTheme !== 'dark' ? '#32638e' : '#CD9C71' }}>
+        <Text
+          style={{ fontSize: '1.05rem', display: 'flex', alignItems: 'center' }}
+        >
+          <Text
+            style={{
+              marginRight: '0.5rem',
+              fontSize: '1.5rem',
+              color: currentTheme !== 'dark' ? '#32638e' : '#CD9C71',
+            }}
+          >
             {iconGenration('LinkedIn')}
           </Text>
-          muathkhatib
+          <a
+            href="https://www.linkedin.com/in/muathkhatib/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Muathkhatib
+          </a>
+        </Text>
+      </div>
+      <div>
+        <Text strong>
+          Let&apos;s connect! Schedule a time to talk
+          <a
+            href="https://calendly.com/muathkhatib/30min"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {' '}
+            Here
+          </a>
+          !
         </Text>
       </div>
     </div>

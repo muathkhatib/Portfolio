@@ -20,10 +20,8 @@ const style = {
     alignItems: 'flex-start',
   },
   TextContentTitle: {
-    height: '20vh',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
     fontWeight: '900',
     fontSize: '2.8rem',
   },
