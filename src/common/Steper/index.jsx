@@ -2,6 +2,8 @@ import { Steps, Typography } from 'antd';
 import { useThemeSwitcher } from 'react-css-theme-switcher';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import ReactHtmlParser from 'react-html-parser';
+
 import './style.css';
 
 const { Step } = Steps;
@@ -12,7 +14,9 @@ const Steper = ({ data, headerTitle }) => {
   const { screenReducer } = useSelector((state) => state);
 
   return (
-    <div style={{ width: screenReducer >= 768 ? '100%' : '100%', margin: '1rem' }}>
+    <div
+      style={{ width: screenReducer >= 768 ? '100%' : '100%', margin: '1rem' }}
+    >
       <Title level={3}>{headerTitle}</Title>
       <div
         style={{
@@ -27,7 +31,7 @@ const Steper = ({ data, headerTitle }) => {
               <Step
                 title={elm.title}
                 subTitle={elm.subTitle}
-                description={elm.description}
+                description={ReactHtmlParser(elm.description)}
                 key={Math.random()}
               />
             ))
